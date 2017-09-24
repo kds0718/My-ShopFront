@@ -1,0 +1,21 @@
+{
+  "name": "myshopfront",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "jquery": "^3.2.1",
+    "truffle-contract": "^3.0.0",
+    "truffle-default-builder": "^2.0.0",
+    "web3": "^1.0.0-beta.21"
+  }
+}
