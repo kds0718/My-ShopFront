@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <base href="." />
+
+  <title>Karen's Shop Front</title>
+
+
+
+  <!-- Latest compiled and minified bootstrap CSS -->
+
+  <link rel="stylesheet" 
+    type = "text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    crossorigin="anonymous"/>
+
+
+   <!-- JQuery -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <!-- Latest compiled and minified bootstrap JavaScript -->
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+  <link href="./app.css" rel='stylesheet' type='text/css'>
+
+<!-- app controller -->
+
+  <script src="./app.js"></script>
+
+
+</head>
+
+
+
+<body ng-cloak ng-controller="Shopfront">
+
+
+
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-md-12">
+
+      <h3>Karen's Shop</h3>
+      <h6>Your account: {{account}} : {{ balance }} (wei) {{balanceInEth}} (ETH)</h6>
+
+      <form id = "addProductForm" ng-submit = "addNewProduct()">
+      <input type = "type" name="newProduct" ng-model"newProduct" required/>
+      <input type="submit" class = "btn btn-primary" value = "Add Product" />
+      </form>
+
+      </br>
+
+      <div class = "panel panel-default">
+        <div class = "panel-body">
+        <table class = "table table-striped table bordered">
+          <tr>
+            <th>Item Id</th>
+            <th>Merchant</th>
+            <th>Stock</th>
+            <th>Price</th>
+          </tr>
+          <tr ng-repeat = "newproduct in productLog">
+            <td>{{ newproduct.args.theId }}</td>
+            <td>{{ newproduct.sender}}</td>
+            <td>{{ newproduct.args.theStock}}</td>
+            <td>{{ newproduct.args.thePrice}}</td>
+          </tr>
+          </table>
+          </div>
+          </div>
+  <script>
+
+    window.addEventListener('load', function() {
+
+      angular.bootstrap(document, ['app']);
+
+    });
+
+  </script>
+
+
+
+</body>
+
+
+
+</html>
